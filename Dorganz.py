@@ -13,7 +13,7 @@
 import os
 
 # Asking for your username
-username = nightfury
+username = "nightfury"
 
 # Defining folder paths
 download_folder = f"/home/{username}/Downloads"
