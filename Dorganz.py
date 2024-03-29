@@ -61,7 +61,16 @@ for filename in os.listdir(download_folder):
     elif filename.endswith((".rar", ".iso", ".zip", ".7z", ".gz", ".bz2", ".bz")):
         os.rename(filepath, os.path.join(zips_folder, filename))
 
+    
+    # Logic for pushing items to other folder
     else:
-        os.rename(filepath, os.path.join(others_folder, filename))
+        if os.path.isdir(filepath):
+            print(f"This is a folder: {filepath}")
+            # pass
+
+        else:
+            # So if the the filename is a regular file it goes to others_folder
+            # But if the filename is a folder its untouched
+            os.rename(filepath, os.path.join(others_folder, filename))            
 
     print("Files Organized")
