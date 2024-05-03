@@ -28,7 +28,7 @@ others_folder = f"{download_folder}/others"
 def create_if_missing(folder_path):
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
-        print(f"Folder Created: {folder_path}")
+        # print(f"Folder Created: {folder_path}")
 
 # Calling the functions
 create_if_missing(image_folder)
@@ -65,12 +65,12 @@ for filename in os.listdir(download_folder):
     # Logic for pushing items to other folder
     else:
         if os.path.isdir(filepath):
-            print(f"This is a folder: {filepath}")
-            # pass
+            # print(f"This is a folder: {filepath}")
+            pass
 
         else:
             # So if the the filename is a regular file it goes to others_folder
             # But if the filename is a folder its untouched
             os.rename(filepath, os.path.join(others_folder, filename))            
 
-    print("Files Organized")
+    # print("Files Organized")
